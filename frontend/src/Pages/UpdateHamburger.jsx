@@ -25,21 +25,11 @@ function UpdateHamburger() {
     e.preventDefault();
     const formData = new FormData();
     formData.append('image', image);
+    formData.append('nome', nome);
+    formData.append('valor', valor);
+    formData.append('categoria', categoria);
 
-    //  const newFood = {
-    //    nome,
-    //    valor,
-    //    image: formData,
-    //    categoria
-    //   }
-
-    const settings = {
-      'headers': {
-        'Content-Type': 'application/json'
-      }
-    }
-
-    Axios.post('http://localhost:3001/foods', formData, settings)
+    Axios.post('http://localhost:3001/foods', formData)
     .then((resp) => console.log(resp))
     .catch((err) => console.log(err));
   }
