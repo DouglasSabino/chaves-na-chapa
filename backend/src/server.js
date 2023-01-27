@@ -1,5 +1,6 @@
 const { routerHome } = require('./routers/routerHome');
 const { routerLogin } = require('./routers/routerLogin');
+const { routerFoods } = require('./routers/routerFoods');
 const { middlewareError } = require('./middlewares/handleError');
 const mongoose = require('mongoose');
 const express = require('express');
@@ -20,6 +21,7 @@ app.use(cors());
 
 app.use('/', routerLogin);
 app.use('/home', routerHome);
+app.use('/foods', routerFoods);
 app.use(middlewareError);
 
 mongoose.connect(STRING_CONNECTION).then(() => {

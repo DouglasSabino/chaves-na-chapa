@@ -1,7 +1,9 @@
 const Joi = require('joi');
 const { httpstatuscode } = require('../utils/httpstatuscode');
 
-const knowErros = {};
+const knowErros = {
+  NO_PHOTO: { code: httpstatuscode.BAD_REQUEST, message: "Por Favor, Insira Uma imagem" }
+};
 
 /** @type {import('express').ErrorRequestHandler} */
 const middlewareError = (err, _req, res, _next) => {
@@ -12,7 +14,7 @@ const middlewareError = (err, _req, res, _next) => {
 
   const error = knowErros[err];
   if (error) return res.status(Number(error.code)).json({ message: `${error.message}` });
-  return res.status(httpstatuscode.INTERNAL_SERVER).json({ message: "Internal Server Error" });
+  return res.status(httpstatuscode.INTERNAL_SERVER).json({ message: err });
 }
 
 module.exports = { middlewareError };
