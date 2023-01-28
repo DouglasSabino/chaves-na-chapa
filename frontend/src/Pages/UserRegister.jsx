@@ -1,5 +1,6 @@
 import appContext from '../context/appContext';
 import { useContext } from 'react';
+import Axios from 'axios';
 
 function UserRegister() {
  const { userName, setUserName, loginField } = useContext(appContext);
@@ -10,12 +11,11 @@ function UserRegister() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:3001/register', {
+    Axios.post('http://localhost:3001/user/register', {
       celphone: loginField,
       name: userName
     }).then((resp) => {
-      if (!resp.data.message) history('/user/register');
-      else history('/home');
+      console.log(resp);
     }).catch((err) => console.log(err));
   }
 
@@ -26,7 +26,7 @@ function UserRegister() {
       name="user-name"
       onChange={handleChange} 
     />
-    <input type="submit"/>
+    <input type="submit" value="Salvar"/>
   </form>
   );
 }

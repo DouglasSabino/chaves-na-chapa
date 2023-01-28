@@ -5,7 +5,7 @@ const controllerUser = {
   register: async (req, res, next) => {
     try {
       await servicesUser.register(req.body);
-      return res.status(httpstatuscode.OK).json('ok');
+      return res.status(httpstatuscode.OK).json({message: "new user created"});
     } catch (err) {
       next(err);
     }
