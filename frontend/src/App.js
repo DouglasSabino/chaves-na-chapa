@@ -12,7 +12,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path='/foods' element={<UpdateHamburger />} />
-            <Route path='/user/register' element={<UserRegister />}/>
+            <Route path='/user/register' element={<UserRegister />} />
           </Routes>
         </Router>
       </ContextProvider>
