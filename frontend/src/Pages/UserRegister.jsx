@@ -1,5 +1,6 @@
 import appContext from '../context/appContext';
 import { useContext } from 'react';
+import { toast } from 'react-toastify';
 import Axios from 'axios';
 
 function UserRegister() {
@@ -16,7 +17,8 @@ function UserRegister() {
       name: userName
     }).then((resp) => {
       console.log(resp);
-    }).catch((err) => console.log(err));
+      toast.success(resp.data.message)
+    }).catch((err) => toast.error(err.response.data.message));
   }
 
   return (

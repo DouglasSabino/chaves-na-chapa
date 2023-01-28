@@ -1,6 +1,7 @@
 import appContext from '../context/appContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Axios from 'axios';
 
 function Login() {
@@ -18,7 +19,7 @@ function Login() {
     }).then((resp) => {
       if (!resp.data.message) history('/user/register');
       else history('/home');
-    }).catch((err) => console.log(err));
+    }).catch((err) => toast.error(err.response.data.message));
   }
 
   return (
