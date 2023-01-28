@@ -7,7 +7,6 @@ const controllerLogin = {
       const user = await servicesLogin.login(req.body);
       return res.status(httpstatuscode.OK).json({message: user});
     } catch (err) {
-      console.log(err);
       next(err);
     }
   },

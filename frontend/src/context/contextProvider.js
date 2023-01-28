@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import appContext from './appContext';
 
 function ContextProvider({ children }) {
+  // LANCHES 
   const [nome, setNome] = useState('');
   const [valor, setValor] = useState(0);
   const [image, setImage] = useState('');
   const [categoria, setCategoria] = useState('');
+  // USUARIOS
+  const [loginField, setLoginField] = useState('');
+  const [userName, setUserName] = useState('');
 
   const contextValue = {
     nome, 
@@ -16,7 +20,11 @@ function ContextProvider({ children }) {
     image, 
     setImage,
     categoria, 
-    setCategoria
+    setCategoria,
+    loginField, 
+    setLoginField,
+    userName, 
+    setUserName
   };
   
   return (
