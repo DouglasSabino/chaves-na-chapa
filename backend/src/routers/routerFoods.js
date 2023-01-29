@@ -5,6 +5,6 @@ const express = require('express');
 
 const routerFoods = express.Router();
 
-routerFoods.post('/', upload.single('image'), controllerFoods.resgister);
+routerFoods.post('/', upload.single('imagem'), controllerFoods.resgister);
 
 module.exports= { routerFoods };

@@ -5,9 +5,9 @@ const controllerFoods = {
     resgister: async (req, res, next) => {
     try {
       if (req.file) {
-        const { nome, valor, categoria } = req.body;
+        const { nome, valor, categoria, ingredientes } = req.body;
         const image = req.file.filename;
-        const newFood = { nome, valor, categoria, image };
+        const newFood = { nome, valor, categoria, image, ingredientes };
         await servicesFoods.register(newFood);
         return res.status(httpstatuscode.OK).json({ message: "Comida Cadastrada com sucesso !!" });
       }else {

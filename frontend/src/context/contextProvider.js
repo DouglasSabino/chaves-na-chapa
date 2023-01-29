@@ -5,9 +5,10 @@ import appContext from './appContext';
 function ContextProvider({ children }) {
   // LANCHES 
   const [nome, setNome] = useState('');
-  const [valor, setValor] = useState(0);
-  const [image, setImage] = useState('');
+  const [valor, setValor] = useState('');
+  const [imagem, setImagem] = useState('');
   const [categoria, setCategoria] = useState('');
+  const [ingredientes, setIngredientes] = useState('');
   // USUARIOS
   const [loginField, setLoginField] = useState('');
   const [userName, setUserName] = useState('');
@@ -17,14 +18,16 @@ function ContextProvider({ children }) {
     setNome,
     valor, 
     setValor,
-    image, 
-    setImage,
+    imagem, 
+    setImagem,
     categoria, 
     setCategoria,
     loginField, 
     setLoginField,
     userName, 
-    setUserName
+    setUserName,
+    ingredientes, 
+    setIngredientes
   };
   
   return (
