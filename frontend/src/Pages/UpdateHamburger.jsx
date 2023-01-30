@@ -54,23 +54,27 @@ function UpdateHamburger() {
             name="valor" 
             onChange={handleChange}
           /> <br />
-          <input
-            placeholder='categoria' 
-            type="text" 
-            name="categoria" 
-            onChange={handleChange}
-          /> <br />
+          <select name="categoria" onChange={handleChange}>
+            <option value="default">Selecione uma Categoria</option>
+            <option value="hamburguer Artesanal">hamburguer Artesanal</option>
+            <option value="hamburguer Tradicional">hamburguer Tradicional</option>
+            <option value="lanche">lanche</option>
+            <option value="sobremesa">sobremesa</option>
+            <option value="açai">açai</option> 
+          </select>
+          <br />
           <input 
             type="file" 
             name="imagem" 
             onChange={handleChange}
           /> <br />
-           <input
-            placeholder='ingredientes'
-            type="text" 
-            name="ingredientes"
-            onChange={handleChange}
-          /> <br />
+          <textarea
+            placeholder='Por favor digite os ingredientes separados por virgula sem espaços' 
+            rows="4" 
+            cols="30" 
+            onChange={handleChange} 
+            name='ingredientes'>
+          </textarea> <br />
           <input type="submit" value="Enviar" />
         </form>
     </div>

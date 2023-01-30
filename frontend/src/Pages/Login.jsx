@@ -23,8 +23,9 @@ function Login() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input 
+    <form className='bg-' onSubmit={handleSubmit}>
+      <input
+        className='border border-black roundend'
         type="text" 
         name="login-field"
         onChange={handleChange} 
