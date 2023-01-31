@@ -7,7 +7,7 @@ const controllerUser = {
     try {
       await schemaRegister.validationRegister(req.body);
       await servicesUser.register(req.body);
-      return res.status(httpstatuscode.OK).json({message: "new user created"});
+      return res.status(httpstatuscode.OK).json({message: "Olá, Seja bem-vindo 😊"});
     } catch (err) {
       next(err);
     }
